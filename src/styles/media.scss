@@ -1,0 +1,14 @@
+@media (max-width: 720px) {
+    body {
+        background-color: black;
+        #root {
+            .calculator {
+                .input {
+                    max-width: 100%;
+                    box-sizing: border-box;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

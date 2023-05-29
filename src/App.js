@@ -1,5 +1,7 @@
 import logo from './logo.svg';
-import './App.css';
+import './styles/style-reset.css'; /* style reset file*/
+import './styles/App.css'; /* style file */
+import './styles/media.css'; /* media file */
 import React, { useState } from 'react';
 
 function App() {
@@ -23,13 +25,19 @@ function App() {
 
     return (
       <div className="calculator">
-        <input type="text" value={result} />
+        <input className="input" type="text" readonly='' value={result} />
         <div className="keypad">
           <button className="highlight" onClick={clear} id="clear">
-            Clear
+            C
           </button>
-          <button name="+" onClick={handleClick}>
-            +
+          <button className="highlight" name="*" onClick={handleClick}>
+            &times;
+          </button>
+          <button className="highlight" name="/" onClick={handleClick}>
+            &divide;
+          </button>
+          <button className="highlight" name="." onClick={handleClick}>
+            .
           </button>
           <button name="7" onClick={handleClick}>
             7
@@ -40,8 +48,8 @@ function App() {
           <button name="9" onClick={handleClick}>
             9
           </button>
-          <button name="-" onClick={handleClick}>
-            -
+          <button className="highlight" name="+" onClick={handleClick}>
+            +
           </button>
           <button name="4" onClick={handleClick}>
             4
@@ -52,8 +60,8 @@ function App() {
           <button name="6" onClick={handleClick}>
             6
           </button>
-          <button name="*" onClick={handleClick}>
-            &times;
+          <button className="highlight" name="-" onClick={handleClick}>
+            -
           </button>
           <button name="1" onClick={handleClick}>
             1
@@ -64,22 +72,15 @@ function App() {
           <button name="3" onClick={handleClick}>
             3
           </button>
-          <button name="/" onClick={handleClick}>
-            &divide;
+          <button className="highlight" onClick={calculate} id="equals">
+            =
           </button>
           <button name="0" onClick={handleClick}>
             0
-          </button>
-          <button name="." onClick={handleClick}>
-            .
-          </button>
-          <button className="highlight" onClick={calculate} id="equals">
-            =
           </button>
         </div>
       </div>
     );
   };
 
-// export default Calculator;
 export default App;
